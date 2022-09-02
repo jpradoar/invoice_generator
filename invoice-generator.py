@@ -1,20 +1,28 @@
 #!/usr/bin/python3
 # Python v3.8.10
 # pip install openpyxl xlsxwriter
+import urllib.request
 import openpyxl
 from datetime import date  
 import json
 
+# Uncomment if prefere read local sellers file
+#sellerfile = open('seller.json',)
+#sellerdata = json.load(sellerfile)
+#sellerfile.close()
 
-# Read sellers file
-sellerfile = open('seller.json',)
-sellerdata = json.load(sellerfile)
-sellerfile.close()
+# Uncomment if prefere read local clients file
+#clientsfile = open('clients.json',)
+#clientdata = json.load(clientsfile)
+#clientsfile.close()
 
-# Read clients file
-clientsfile = open('clients.json',)
-clientdata = json.load(clientsfile)
-clientsfile.close()
+with urllib.request.urlopen("https://raw.githubusercontent.com/jpradoar/invoice_generator/main/seller.json") as url:
+	sellerdata = json.load(url)
+
+with urllib.request.urlopen("https://raw.githubusercontent.com/jpradoar/invoice_generator/main/clients.json") as url:
+	clientdata = json.load(url)
+
+
 
 # Generate data strings
 getDate = date.today() 
@@ -29,7 +37,7 @@ sheet = xfile["Invoice"]
 # Populate data :D 
 #---------------------------
 
-# Fix rows
+# Fix rows #--------------------------------------
 sheet['A2'] = 'SELLER'
 sheet['B2'] = 'BUYER'
 sheet['D2'] = 'INVOICE'
@@ -52,9 +60,7 @@ sheet['E24'] = '=E22*E23'
 sheet['C25'] = 'TOTAL'
 sheet['D25'] = 'USD'
 sheet['E25'] = '=SUM(A30:A31)'
-
-
-
+# END fix rows --------------------------------------
 
 # Invoice seller information
 sheet['A1'] = json.dumps(sellerdata["seller"]["me"]["company"]).strip('"')
@@ -95,7 +101,7 @@ sheet['C16'] = '1'
 sheet['D16'] = '1000'
 sheet['E16'] = '1000'
 
-
+# END Populate data--------------------------------------
 
 
 # Save populated file
