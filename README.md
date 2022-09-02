@@ -19,12 +19,25 @@
     3. Parse information and write data
     4. Save new file with format "invoice_DATETIME.xls"     
 
-<br>
 
-### Example
+
 
 <div align="center">
-    <img src="invoice-generated.png">
-    <br><br>
+    <h2>Design</h2>
+    <img src="design.png" width="400" height="500">
+</div>
+
+<br>
+
+<div align="center">
+     <h2>Example</h2>
     <img src="example.png">
 </div>
+
+<br>
+
+<div align="center">
+     <h2>Result</h2>
+   <img src="invoice-generated.png" width="400" height="500">
+</div>
+    
