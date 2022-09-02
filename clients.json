@@ -1,0 +1,26 @@
+{  
+    "clients": {  
+        "SuperDuperClient":{
+            "clientID": "000001",
+            "name": "SuperDuperClient",   
+            "company":"SuperDuperClient",
+            "address":"The corner of the moon, 22",
+            "city":"The Moon, Space",
+            "phone":"+000 000 00 00 01",
+            "mail":"info@SuperDuperClient.com",
+            "contract": "Traditional",
+            "scope": "Automation & Cloud Specialist"
+            },  
+        "foocha": {
+            "clientID": "000002",            
+            "name": "name foocha",   
+            "company":"company foofoo chacha",
+            "address":"address foo 123",
+            "city":"city foo",
+            "phone":"phone 123456789",
+            "mail":"mail foo@foo.com",
+            "contract": "Project",
+            "scope": "Development"
+        }
+    }
+}  

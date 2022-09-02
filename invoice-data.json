@@ -1,0 +1,13 @@
+{  
+    "invoice": {  
+        "english":{
+            "xxx": "INVOICE",   
+            "xxx":"xxx"
+            },          
+        "spanish":{
+            "xxx": "FACTURA",   
+            "type": ["A", "B", "C", "E"],
+            "xxx":"xxx"
+            }
+    }
+}  
