@@ -1,0 +1,14 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "Statement1",
+            "Principal": {
+                "AWS": "arn:aws:iam::000000000000:user/MY-USER"
+              },
+            "Effect": "Allow",
+            "Action": ["s3:PutObject","s3:PutObjectAcl"],
+            "Resource": "arn:aws:s3:::MY-BUCKET-NAME/*"
+        }
+    ]
+}
