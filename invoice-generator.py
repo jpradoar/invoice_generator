@@ -6,7 +6,7 @@ import json
 import sys
 import boto3
 from botocore.exceptions import NoCredentialsError
-
+import requests
 
 # Uncomment it if you prefere use #
 # ./invoice-generator.py me SuperDuperClient
@@ -54,12 +54,15 @@ with urllib.request.urlopen("https://raw.githubusercontent.com/jpradoar/invoice_
 with urllib.request.urlopen("https://raw.githubusercontent.com/jpradoar/invoice_generator/main/clients.json") as url:
 	clientdata = json.load(url)
 
-
-
 # Generate data strings
 getDate = date.today() 
 datetoday = str(getDate.month)+ "/" + str(getDate.day) + "/" + str(getDate.year)   
 datetodayout = str(getDate.month)+ "-" + str(getDate.day) + "-" + str(getDate.year)   
+
+# Download last version of template
+#URL = "https://github.com/jpradoar/invoice_generator/raw/main/template.xlsx"
+#response = requests.get(URL)
+#open("template.xlsx", "wb").write(response.content)
 
 # Read Excel (or any xls)
 xfile = openpyxl.load_workbook("template.xlsx")
