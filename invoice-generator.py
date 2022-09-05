@@ -49,10 +49,10 @@ def upload_to_aws(local_file):
 #clientsfile.close()
     
 with urllib.request.urlopen("https://raw.githubusercontent.com/jpradoar/invoice_generator/main/seller.json") as url:
-	sellerdata = json.load(url)
+    sellerdata = json.load(url)
 
 with urllib.request.urlopen("https://raw.githubusercontent.com/jpradoar/invoice_generator/main/clients.json") as url:
-	clientdata = json.load(url)
+    clientdata = json.load(url)
 
 # Generate data strings
 getDate = date.today() 
@@ -88,9 +88,10 @@ def c_invoice():
 
 
 def x_invoice():
-    print("Invoice type x")
+    print("Invoice type X")
     # Read tab/sheet of Excel doc (or any xls)
     sheet = xfile["Invoice_x"]
+    sheet['B1'] = 'X'
 
 
 def e_invoice():

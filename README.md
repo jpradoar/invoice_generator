@@ -2,15 +2,19 @@
 
 <hr>
 
+### Unzip template.xlsx
+    When I commit a .xls it change or become in a corrupt file. (I dont know yet), for now, download all code and fist of all unzip the template
+    tar -xzvf template.tar.gz
+
 ### Run without build
     ./invoice-generator.py SELLER CLIENT INVOICE_TYPE
-    ./invoice-generator.py me foocha e
+    ./invoice-generator.py me SuperDuperClient e
 
 ### Build 
-     docker build -t invoce-generator .     
+     docker build -t invoice_generator .     
 
 ### Run
-    docker run -it -v $PWD:/app invoce-generator me SuperDuperClient
+    docker run -it -v $PWD:/app invoce-generator me SuperDuperClient e
 
 
 ### Logic
