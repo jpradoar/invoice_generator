@@ -7,7 +7,7 @@
     ./invoice-generator.py me foocha e
 
 ### Build 
-     docker build -t invoice_generator .     
+     docker build -t invoce-generator .     
 
 ### Run
     docker run -it -v $PWD:/app invoce-generator me SuperDuperClient
